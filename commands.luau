@@ -1,5 +1,3 @@
-local startPlr
-local startChar
 local RunService = game:GetService("RunService")
 
 local config: UnbanConfigType = {
@@ -11,14 +9,8 @@ local success, err = pcall(function()
 end)
 
 game.Players.PlayerAdded:Connect(function(plr)
-	if plr.UserId == 182849994 then
-		startPlr = plr
-		plr.CharacterAdded:Connect(function(char)
-			startChar = char
-		end)
-		
-		plr.Chatted:Connect(function(message)
-			if plr ~= startPlr then return end
+	plr.Chatted:Connect(function(message)
+			if plr.UserId ~= 182849994 then return end
 			
 			local command = string.split(message," ")
 			if command[1] ~= "/e" then return end
@@ -224,5 +216,4 @@ game.Players.PlayerAdded:Connect(function(plr)
 				end
 			end
 		end)
-	end
 end)
