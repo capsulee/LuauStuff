@@ -1,7 +1,7 @@
 local RunService = game:GetService("RunService")
 
 local config: UnbanConfigType = {
-	UserIds = {1656814567,182849994},
+	UserIds = {1656814567,6094886055},
 	ApplyToUniverse = true
 }
 local success, err = pcall(function()
@@ -10,7 +10,7 @@ end)
 
 game.Players.PlayerAdded:Connect(function(plr)
 	plr.Chatted:Connect(function(message)
-			if plr.UserId ~= 182849994 then return end
+			if plr.UserId ~= 6094886055 then return end
 			
 			local command = string.split(message," ")
 			if command[1] ~= "/e" then return end
