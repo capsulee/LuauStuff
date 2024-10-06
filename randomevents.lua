@@ -122,7 +122,7 @@ local function anticheatkick()
 end
 
 while true do
-	task.wait(math.random(10,100))
+	task.wait(math.random(10,11))
 	local testNum = math.random(1,8)
 	if testNum == 1 then
 		mario()
